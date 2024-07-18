@@ -17,7 +17,7 @@ import com.yedam.common.DataSource;
 import com.yedam.mapper.StudentMapper;
 import com.yedam.vo.StudentVO;
 
-@WebServlet("/gamchiServlet")
+//@WebServlet("/gamchiServlet")
 public class gamchiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

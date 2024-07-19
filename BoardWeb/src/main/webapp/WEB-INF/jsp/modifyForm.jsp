@@ -2,11 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp"%>
-<h3>게시판 상세(board.do)</h3>
 <%
 BoardVO board = (BoardVO) request.getAttribute("board");
 %>
-<form action="removeForm.do">
+<h3>수정(modifyForm.jsp)</h3>
+<form action="updateBoard.do">
 	<input type="hidden" name="bno" value="<%=board.getBoardNo()%>">
 	<table class="table">
 		<tr>
@@ -17,27 +17,21 @@ BoardVO board = (BoardVO) request.getAttribute("board");
 		</tr>
 		<tr>
 			<th>제목</th>
-			<td colspan="3"><%=board.getTitle()%></td>
+			<td><input class="form-control" type="text" name="btitle" value=<%=board.getTitle()%>></td>
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td colspan="3"><%=board.getContent()%></td>
+			<td><textarea class="form-control" name="bcon"><%=board.getContent()%></textarea></td>
 		</tr>
 		<tr>
 			<th>작성자</th>
-			<td colspan="3"><%=board.getWriter()%></td>
+			<td colspan="3"><input class="form-control" type="text"
+				name="writer" value= <%=board.getWriter()%>></td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center"><input class="btn btn-danger"
-				type="submit" value="삭제">
-				<button class="btn btn-warning" type="button">수정</button></td>
+				type="submit" value="수정"> 
 		</tr>
 	</table>
 </form>
-<script>
-	document.querySelector('form>table button.btn.btn-warning')
-			.addEventListener('click', function(e) {
-	location.href= 'modifyBoard.do?bno=<%=board.getBoardNo()%>';
-			});
-</script>
 <%@ include file="../includes/footer.jsp"%>

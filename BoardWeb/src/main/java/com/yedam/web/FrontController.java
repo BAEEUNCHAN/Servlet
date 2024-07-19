@@ -34,10 +34,16 @@ public class FrontController extends HttpServlet {
 		// 글등록 구현: 등록화면(boardForm) + DB등록(addboard.do) -> 글목록페이지이동.
 		map.put("/boardForm.do", new BoardForm());
 		map.put("/addBoard.do", new AddboardControl());
-		//학생목록
+		// 학생목록
 		map.put("/stdList.do", new StudentListControl());
-		//글 상세내역
+		// 글 상세내역
 		map.put("/board.do", new Board());
+		// 글 삭제기능
+		map.put("/removeForm.do", new removeBoard());
+		map.put("/deleteBoard.do",new DeleteBoard());
+		// 글 수정기능
+		map.put("/modifyBoard.do", new modifyBoard());
+		map.put("/updateBoard.do",new UpdateBoard());
 	}
 
 	@Override

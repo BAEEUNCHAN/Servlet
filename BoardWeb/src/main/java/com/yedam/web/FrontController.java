@@ -11,9 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.common.Control;
+import com.yedam.control.ActionControl;
 import com.yedam.control.AddboardControl;
 import com.yedam.control.BoardListControl;
+import com.yedam.control.LogoutControl;
 import com.yedam.control.StudentListControl;
+import com.yedam.control.loginControl;
+import com.yedam.control.memberListControl;
 
 /*
  * FrontController 역할은 사용자의 모든 요청을 처리
@@ -40,10 +44,19 @@ public class FrontController extends HttpServlet {
 		map.put("/board.do", new Board());
 		// 글 삭제기능
 		map.put("/removeForm.do", new removeBoard());
-		map.put("/deleteBoard.do",new DeleteBoard());
+		map.put("/deleteBoard.do", new DeleteBoard());
 		// 글 수정기능
 		map.put("/modifyBoard.do", new modifyBoard());
-		map.put("/updateBoard.do",new UpdateBoard());
+		map.put("/updateBoard.do", new UpdateBoard());
+		// 태그연습
+		map.put("/action.do", new ActionControl());
+		// 로그인
+		map.put("/loginForm.do", new loginForm());
+		map.put("/login.do", new loginControl());
+		// 로그아웃
+		map.put("/logout.do", new LogoutControl());
+		//관리자가 사용하는 기능들..ex)회원목록
+		map.put("/memberList.do", new memberListControl());
 	}
 
 	@Override

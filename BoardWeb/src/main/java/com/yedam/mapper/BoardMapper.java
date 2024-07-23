@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.yedam.common.SearchVO;
 import com.yedam.vo.BoardVO;
+import com.yedam.vo.MemberVO;
+import com.yedam.vo.StudentVO;
 
 /*/
  * 글목록, 등록, 수정, 삭제, 단건조회, 

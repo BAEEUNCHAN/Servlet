@@ -2,6 +2,9 @@ package com.yedam.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
+import com.yedam.vo.MemberVO;
 import com.yedam.vo.StudentVO;
 
 public interface StudentMapper {
@@ -11,6 +14,12 @@ public interface StudentMapper {
 	int updateStudent(StudentVO svo); // 학생번호기준 -> 연락처 변경
 	int deleteStudent(StudentVO svo);
 	StudentVO selectOne(String sno);
+	
+	//로그인체크.
+	MemberVO selectMember(@Param("id")String id, @Param("pw")String pw);
+	//회원목록 확인(관리자)
+	List<MemberVO> memberList(String mem);
+	
 	
 	
 

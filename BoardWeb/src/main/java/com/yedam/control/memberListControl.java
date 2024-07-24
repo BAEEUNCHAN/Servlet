@@ -17,24 +17,18 @@ public class memberListControl implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-//		String id = req.getParameter("MemberId");
-//		String pw = req.getParameter("MemberPw");
-		String nm = req.getParameter("member_nm");
-//		String rs = req.getParameter("Responsibility");
-//		
-		MemberVO mem = new MemberVO();
-//		
-//		mem.setMemberId(id);
-//		mem.setMemberPw(pw);
-		mem.setMemberNm(nm);
-//		mem.setResponsibility(rs);
+
+		String orderBy = req.getParameter("order");
+		orderBy = orderBy == null ? "member_nm" : orderBy ;
+		req.setAttribute("member_nm", orderBy);
+
+		String res = req.getParameter("res");
+		res = res == null ? "User" : res ;
 		
 		MemberService mvc = new MemberServiceImpl();
-		List<MemberVO> list =mvc.memberList("User");
+		List<MemberVO> list = mvc.memberList(res,orderBy);
 		req.setAttribute("memberList", list);
-//		List<MemberVO> list1 =mvc.memberList("User");
-		req.setAttribute("member_nm", nm);
+
 		req.getRequestDispatcher("admin/memberList.tiles").forward(req, resp);
 	}
 

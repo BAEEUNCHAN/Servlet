@@ -36,7 +36,7 @@ public class loginControl implements Control {
 		HttpSession session = req.getSession();
 		session.setAttribute("logid", id);
 		session.setMaxInactiveInterval(30 * 60);
-		if (mem.getResponsibility().equals("user")) {
+		if (mem.getResponsibility().equals("User")) {
 		resp.sendRedirect("boardList.do");
 		}else if (mem.getResponsibility().equals("Admin")) {
 			resp.sendRedirect("memberList.do");

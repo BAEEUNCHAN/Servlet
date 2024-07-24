@@ -41,14 +41,11 @@
 		delete from tbl_student
 		where std_no = #{stdNo}
 	</delete>
+	
 	<select id="memberList" resultType="com.yedam.vo.MemberVO">
 		select *
 		from tbl_member
 		where responsibility = #{mem}
-	</select>
-	<select id="member_nm" resultType="com.yedam.vo.MemberVO">
-		select *
-		from tbl_member
-		order by 
+		order by ${order}
 	</select>
 </mapper>

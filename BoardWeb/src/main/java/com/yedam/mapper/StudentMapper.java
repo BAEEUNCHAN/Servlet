@@ -15,7 +15,7 @@ public interface StudentMapper {
 
 	int updateStudent(StudentVO svo); // 학생번호기준 -> 연락처 변경
 
-	int deleteStudent(StudentVO svo);
+	int deleteStudent(String stdNo);
 
 	StudentVO selectOne(String sno);
 

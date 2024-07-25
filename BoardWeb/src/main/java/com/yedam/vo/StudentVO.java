@@ -1,7 +1,5 @@
 package com.yedam.vo;
 
-import java.sql.Date;
-
 import lombok.Data;
 
 @Data
@@ -11,7 +9,7 @@ public class StudentVO {
 	private String stdPhone;
 	private String address;
 	private String BirthDate; // 1999-01-01
-	private Date creationDate;
+	private String creationDate;
 
 	public String briefShow() {
 

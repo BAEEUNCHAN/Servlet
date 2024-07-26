@@ -48,7 +48,6 @@ const obj = {
 		return this.name1 + ', ' + this.age;
 	}
 };
-
 console.log(`이름은 ${obj.name}, 나이는 ${obj['age']}`);
 console.log(obj.myInfo());
 

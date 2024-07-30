@@ -185,4 +185,3 @@ function pageMove() {
 			})//click event.
 		});
 } // end of pageMove
-

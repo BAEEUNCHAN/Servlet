@@ -24,7 +24,7 @@
 				aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 				<nav class="sb-sidenav-menu-nested nav">
 					<a class="nav-link" href="memberList.do">회원목록 관리</a>
-					<a class="nav-link" href="layout-sidenav-light.html">회원권한 관리</a>
+					<a class="nav-link" href="googleChart.do">회원권한 관리</a>
 				</nav>
 			</div>
 			<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
